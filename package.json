@@ -1,0 +1,40 @@
+{
+  "name": "open-in-developer-mode",
+  "version": "0.0.0",
+  "description": "Re-open the current file/project in developer mode",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idleberg/atom-open-in-developer-mode"
+  },
+  "keywords": [
+    "devmode",
+    "developer mode"
+  ],
+  "main": "./lib/main",
+  "activationCommands": {
+    "atom-workspace": [
+      "open-in-developer-mode:toggle",
+      "open-in-developer-mode:reopen-file-in-dev-mode",
+      "open-in-developer-mode:reopen-file-in-normal-mode"
+    ]
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.3.1",
+    "eslint-config-atom-build": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-jshint": "^2.0.1",
+    "gulp-jsonlint": "^1.1.2",
+    "gulp-lesshint": "^2.0.0",
+    "jshint": "^2.9.3"
+  },
+  "scripts": {
+    "test": "gulp lint"
+  }
+}
