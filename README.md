@@ -4,8 +4,7 @@
 [![apm](https://img.shields.io/apm/v/open-in-developer-mode.svg?style=flat-square)](https://atom.io/packages/open-in-developer-mode)
 [![apm](https://img.shields.io/apm/dm/open-in-developer-mode.svg?style=flat-square)](https://atom.io/packages/open-in-developer-mode)
 [![Travis](https://img.shields.io/travis/idleberg/atom-open-in-developer-mode.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-open-in-developer-mode)
-[![David](https://img.shields.io/david/idleberg/atom-open-in-developer-mode.svg?style=flat-square)](https://david-dm.org/idleberg/atom-open-in-developer-mode#info=dependencies)
-[![David](https://img.shields.io/david/dev/idleberg/atom-open-in-developer-mode.svg?style=flat-square)](https://david-dm.org/idleberg/atom-open-in-developer-mode#info=devDependencies)
+[![David](https://img.shields.io/david/dev/idleberg/atom-open-in-developer-mode.svg?style=flat-square)](https://david-dm.org/idleberg/atom-open-in-developer-mode?type=dev)
 
 Re-open the current file/project in developer mode
 
