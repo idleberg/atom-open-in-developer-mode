@@ -1,0 +1,25 @@
+'context-menu':
+  'atom-text-editor': [
+    {
+      command: 'open-in-developer-mode:toggle'
+      label: 'Toggle Developer Mode'
+    }
+  ]
+
+menu: [
+  {
+    label: 'View'
+    submenu: [
+      {
+        label: 'Developer'
+        submenu: [
+          { type: 'separator' }
+          {
+            command: 'open-in-developer-mode:load'
+            label: 'Reload file in Developer Mode'
+          }
+        ]
+      }
+    ]
+  }
+]

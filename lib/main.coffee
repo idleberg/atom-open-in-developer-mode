@@ -2,19 +2,14 @@ meta = require '../package.json'
 
 module.exports =
   activate: (state) ->
-    require('atom-package-deps').install(meta.name)
-
     {CompositeDisposable} = require 'atom'
-
-    if atom.inDevMode()
-       atom.notifications.addInfo("You're now in developer mode", dismissable: false)
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
     @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:toggle': => @toggleDevMode()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:reopen-file-in-dev-mode': => @enableDevMode()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:reopen-file-in-normal-mode': => @disableDevMode()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:load': => @enableDevMode()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:unload': => @disableDevMode()
 
   deactivate: ->
     @subscriptions?.dispose()

@@ -15,8 +15,8 @@
   "activationCommands": {
     "atom-workspace": [
       "open-in-developer-mode:toggle",
-      "open-in-developer-mode:reopen-file-in-dev-mode",
-      "open-in-developer-mode:reopen-file-in-normal-mode"
+      "open-in-developer-mode:load",
+      "open-in-developer-mode:unload"
     ]
   },
   "engines": {
