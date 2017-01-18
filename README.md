@@ -16,7 +16,7 @@ Install `open-in-developer-mode` from Atom's [Package Manager](http://flight-man
 
 `$ apm install open-in-developer-mode`
 
-### GitHub
+### Using Git
 
 Change to your Atom packages directory:
 
