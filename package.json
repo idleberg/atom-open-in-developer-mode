@@ -1,6 +1,6 @@
 {
   "name": "open-in-developer-mode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Re-open the current file/project in developer mode",
   "license": "MIT",
   "repository": {
