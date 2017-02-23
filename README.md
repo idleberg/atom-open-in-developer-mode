@@ -34,6 +34,16 @@ Clone repository as `open-in-developer-mode`:
 $ git clone https://github.com/idleberg/atom-open-in-developer-mode open-in-developer-mode
 ```
 
+## Indicator
+
+You can use the [`custom-title`](https://atom.io/packages/custom-title) package to add an indicator, showing whether you're in Developer Mode.
+
+**Example:** 
+
+    <%= fileName %><% if (devMode) { %> (Developer Mode)<% } %>
+
+This will append *(Developer Mode)* to the title displayed in the window title.
+
 ## License
 
 This work is licensed under the [The MIT License](LICENSE.md).
