@@ -40,7 +40,7 @@ You can use the [`custom-title`](https://atom.io/packages/custom-title) package 
 
 **Example:** 
 
-    <%= fileName %><% if (devMode) { %> (Developer Mode)<% } %>
+    <%= fileName %><% if (projectPath) { %> – <%= projectPath %><% } %><% if (devMode) { %> (Developer Mode)<% } %>
 
 This will append *(Developer Mode)* to the title displayed in the window title.
 
