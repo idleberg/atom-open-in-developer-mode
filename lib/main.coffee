@@ -8,8 +8,7 @@ module.exports =
     @subscriptions = new CompositeDisposable
 
     @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:toggle': => @toggleDevMode()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:load': => @enableDevMode()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:unload': => @disableDevMode()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'open-in-developer-mode:open': => @openDevMode()
 
   deactivate: ->
     @subscriptions?.dispose()
@@ -18,36 +17,29 @@ module.exports =
   toggleDevMode: () ->
     paths = @getPaths()
 
-    unless paths
+    if paths.length is 0
       atom.commands.dispatch(atom.views.getView(atom.workspace), 'application:open-dev')
       return
 
     if atom.inDevMode()
-      @disableDevMode(paths)
+      atom.open({ pathsToOpen: paths, newWindow: true, devMode: false })
     else
-      @enableDevMode(paths)
+      atom.open({ pathsToOpen: paths, newWindow: true, devMode: true })
 
-  enableDevMode: (paths) ->
-    return if atom.inDevMode()
-
-    paths = @getPaths() unless paths
-
-    atom.open({ pathsToOpen: paths, newWindow: true, devMode: true })
     atom.close()
 
-  disableDevMode: (path) ->
-    return unless atom.inDevMode()
+  openDevMode: () ->
+    if atom.inDevMode()
+      atom.notifications.addInfo("You're already in Developer Mode", dismissable: false)
+      return
 
-    paths = @getPaths() unless paths
-
-    atom.open({ pathsToOpen: paths, newWindow: true, devMode: false })
-    atom.close()
+    atom.open({ pathsToOpen: @getPaths(), newWindow: true, devMode: true })
 
   getPaths: () ->
     projectPaths = atom.project.getPaths()
-    return projectPaths if projectPaths
+    return projectPaths if projectPaths?
 
     editorPath = atom.workspace.getActiveTextEditor()?.getPath()
-    return editorPath if editorPath
+    return editorPath if editorPath?
 
     atom.beep()
