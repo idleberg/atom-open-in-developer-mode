@@ -15,8 +15,8 @@ menu: [
         submenu: [
           { type: 'separator' }
           {
-            command: 'open-in-developer-mode:load'
-            label: 'Reload file in Developer Mode'
+            command: 'open-in-developer-mode:open'
+            label: 'Re-open File In Developer Mode'
           }
         ]
       }
