@@ -16,40 +16,38 @@ module.exports =
     @subscriptions = null
 
   toggleDevMode: () ->
-    path = atom.workspace.getActiveTextEditor()?.getPath()
+    paths = @getPaths()
 
-    unless path
-      atom.beep()
+    unless paths
       atom.commands.dispatch(atom.views.getView(atom.workspace), 'application:open-dev')
       return
 
     if atom.inDevMode()
-      @disableDevMode(path)
+      @disableDevMode(paths)
     else
-      @enableDevMode(path)
+      @enableDevMode(paths)
 
-  enableDevMode: (path) ->
+  enableDevMode: (paths) ->
     return if atom.inDevMode()
 
-    path = atom.workspace.getActiveTextEditor()?.getPath() unless path
+    paths = @getPaths() unless paths
 
-    unless path
-      atom.beep()
-      return
-
-    atom.open({ pathsToOpen: path, newWindow: true, devMode: true })
+    atom.open({ pathsToOpen: paths, newWindow: true, devMode: true })
     atom.close()
 
   disableDevMode: (path) ->
     return unless atom.inDevMode()
 
+    paths = @getPaths() unless paths
 
-    path = atom.workspace.getActiveTextEditor()?.getPath() unless path
-
-
-    unless path
-      atom.beep()
-      return
-
-    atom.open({ pathsToOpen: path, newWindow: true, devMode: false })
+    atom.open({ pathsToOpen: paths, newWindow: true, devMode: false })
     atom.close()
+
+  getPaths: () ->
+    projectPaths = atom.project.getPaths()
+    return projectPaths if projectPaths
+
+    editorPath = atom.workspace.getActiveTextEditor()?.getPath()
+    return editorPath if editorPath
+
+    atom.beep()
