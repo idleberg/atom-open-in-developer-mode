@@ -1,10 +1,10 @@
 # open-in-developer-mode
 
-[![apm](https://img.shields.io/apm/l/open-in-developer-mode.svg?style=flat-square)](https://atom.io/packages/open-in-developer-mode)
-[![apm](https://img.shields.io/apm/v/open-in-developer-mode.svg?style=flat-square)](https://atom.io/packages/open-in-developer-mode)
-[![apm](https://img.shields.io/apm/dm/open-in-developer-mode.svg?style=flat-square)](https://atom.io/packages/open-in-developer-mode)
-[![Travis](https://img.shields.io/travis/idleberg/atom-open-in-developer-mode.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-open-in-developer-mode)
-[![David](https://img.shields.io/david/dev/idleberg/atom-open-in-developer-mode.svg?style=flat-square)](https://david-dm.org/idleberg/atom-open-in-developer-mode?type=dev)
+[![apm](https://flat.badgen.net/apm/license/open-in-developer-mode)](https://atom.io/packages/open-in-developer-mode)
+[![apm](https://flat.badgen.net/apm/v/open-in-developer-mode)](https://atom.io/packages/open-in-developer-mode)
+[![apm](https://flat.badgen.net/apm/dl/open-in-developer-mode)](https://atom.io/packages/open-in-developer-mode)
+[![CircleCI](https://flat.badgen.net/circleci/github/idleberg/atom-open-in-developer-mode)](https://circleci.com/gh/idleberg/atom-open-in-developer-mode)
+[![David](https://flat.badgen.net/david/dep/idleberg/atom-open-in-developer-mode)](https://david-dm.org/idleberg/atom-open-in-developer-mode)
 
 Re-open the current file/project in developer mode
 
